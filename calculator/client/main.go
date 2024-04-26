@@ -20,5 +20,6 @@ func main() {
 
 	c := pb.NewCalculatorServiceClient(conn)
 
-	sum(c)
+	// sum(c)
+	primes(c)
 }
