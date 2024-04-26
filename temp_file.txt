@@ -1,126 +1,119 @@
 {
-    "Authentication": {
-      "Authority": "http://auth",
-      "RequireHttps": false,
-      "SkipAuthentication": false,
-      "DefaultReadScope": "aiassistant_read_access",
-      "DefaultRestrictedScope": "aiassistant_restricted_access",
-      "DefaultWriteScope": "aiassistant_write_access",
-      "ClientId": "pmi_aiassistant_service",
-      "ApiToRequest": "authentication_read_access config_read_access dashboard_read_access data_read_access dataservicerouter_read_access export_read_access portal_admin_read_access potential_access storage_read_access storage_write_access widgettemplateeditor_read_access",
-      "Issuer": "https://pl-kpidev-dev01-kpi01-euf.dev.kpi.oa.iqvia.com/auth",
-      "ClientSecret": "MmhikNBCw0HWVp57rhwDxq2etcEQueTD"
-    },
-    "Mongo": {
-      "ConnectionString": "mongodb+srv://dbadmin:4ReiWOdtW6Zvo784XN3kTE1eYhB5aKR9@core-cache-service-svc.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/admin?ssl=false",
-      "MaxConnectionPoolSize": 300,
-      "MinConnectionPoolSize": 100
-    },
-    "Cors": {
-      "ExposedHeaders": [],
-      "Headers": [
-        "*"
-      ],
-      "Methods": [
-        "*"
-      ],
-      "Origins": [
-        "*"
-      ],
-      "PreflightMaxAge": null,
-      "SupportsCredentials": false
-    },
-    "ExternalServices": {
-      "Config": {
-        "BaseUrl": "http://config.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "WidgetTemplateEditor": {
-        "BaseUrl": "http://widget-template-editor-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "Export": {
-        "BaseUrl": "http://export.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "DataServiceRouter": {
-        "BaseUrl": "http://data-service-router.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "DataProcessor": {
-        "BaseUrl": "http://data-processor.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "MapService": {
-        "BaseUrl": "http://mapshapegen-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "DmData": {
-        "BaseUrl": "http://data.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "DwhData": {
-        "BaseUrl": "http://datadwh.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "VirtualData": {
-        "BaseUrl": "http://datavirtual.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
-        "Timeout": "00:20:00"
-      },
-      "Potential": {
-        "BaseUrl": "http://potential-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local:8000",
-        "Timeout": "00:20:00"
-      }
-    },
-    "Swagger": {
-      "Title": "AI Assistant Service",
-      "CustomRequestHeaders": {}
-    },
-    "OpenTelemetry": {
-      "Enabled": false,
-      "JaegerHost": "jaeger-agent",
-      "JaegerPort": 6831
-    },
-    "RabbitMQ": {
-      "Host": "rabbitmq://rabbitmq",
-      "Password": "npReCXWUy4qkSwYRPTtCMP",
-      "Username": "rabbitmq"
-    },
-    "SecretManagerSettings": {
-      "EnableSecretManager": true,
-      "SecretManagerApiUrl": "http://secret-management-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/"
-    },
-    "Logging": {
-      "LogLevel": {
-        "Default": "Error",
-        "Microsoft.AspNetCore": "Warning"
-      }
-    },
-    "CloudStorageProvider": "aws",
-    "S3Bucket": {
-      "UseIAMUserAccess": "false",
-      "UseKpiS3FolderPrefix": "false",
-      "KpiS3FolderPrefix": "",
-      "BucketAccessKey": "<secret:kpi_AWS_ACCESS_KEY_ID>",
-      "BucketSecretKey": "<secret:kpi_AWS_ACCESS_KEY_SECRET>",
-      "BucketName": "oa-pl-euf-kpideveloper-kpi01-dev01-kpidev-oa",
-      "RegionName": "eu-central-1"
-    },
-    "Hangfire": {
-      "WorkerCount": 2,
-      "AutomaticRetryCount": 0,
-      "CookieExpirationMinutes": 5,
-      "JobPersistentDays": 20,
-      "MaximumFailed": 10000,
-      "IsReadOnlyDashboard": false,
-      "IsEnabled": true,
-      "ConnectionString": "mongodb+srv://dbadmin:4ReiWOdtW6Zvo784XN3kTE1eYhB5aKR9@core-cache-service-svc.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/admin?ssl=false",
-      "BaseDashboardUrl": "https://pl-kpidev-dev01-kpi01-euf.dev.kpi.oa.iqvia.com/dashboard/"
-    },
-    "AwsService": {
-      "UseIamUserAccess": "false",
-      "AccessKey": "<secret:kpi_AWS_ACCESS_KEY_ID>",
-      "SecretKey": "<secret:kpi_AWS_ACCESS_KEY_SECRET>",
-      "RegionName": "eu-central-1"
+  "Authentication": {
+    "Authority": "http://auth",
+    "RequireHttps": false,
+    "SkipAuthentication": false,
+    "DefaultReadScope": "config_read_access",
+    "DefaultRestrictedScope": "",
+    "DefaultWriteScope": "config_write_access",
+    "ClientId": "pmi_config_service",
+    "ApiToRequest": "potential_access authentication_read_access data_read_access dataservicerouter_read_access portal_admin_read_access kubernetes_access",
+    "Issuer": "https://pl-kpidev-dev01-kpi01-euf.dev.kpi.oa.iqvia.com/auth",
+    "ClientSecret": "MmhikNBCw0HWVp57rhwDxq2etcEQueTD"
+  },
+  "Hangfire": {
+    "WorkerCount": 2,
+    "AutomaticRetryCount": 0,
+    "CookieExpirationMinutes": 5,
+    "JobPersistentDays": 20,
+    "MaximumFailed": 10000,
+    "IsReadOnlyDashboard": false,
+    "IsEnabled": true,
+    "ConnectionString": "mongodb+srv://dbadmin:4ReiWOdtW6Zvo784XN3kTE1eYhB5aKR9@core-cache-service-svc.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/admin?ssl=false",
+    "BaseDashboardUrl": "https://pl-kpidev-dev01-kpi01-euf.dev.kpi.oa.iqvia.com/config/"
+  },
+  "DatabaseProvider" : {
+    "Name": "PostgreSQL"
+  },
+  "ConnectionStrings": {
+    "ConfigDb": {
+      "CommandTimeout": 3600,
+      "ConnectionString": "Data Source=,1433;Initial Catalog=config_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;UID='<secret:kpi_MASTER_USER>';PWD='<secret:kpi_MASTER_PASSWORD>';Connection Timeout=3600;TrustServerCertificate=True;SslMode=Require",
+      "ConnectionString_PostgreSQL": "Username=oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;Password=xobQsMqBi5h2;Host=endpoint-662744937784-vpc-0f30ead302d28c30e-l34emw.endpoint.proxy-cefekb6lills.eu-central-1.rds.amazonaws.com;Port=5432;Database=config_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;SslMode=Allow;"
     }
+  },
+  "Cors": {
+    "ExposedHeaders": [
+      "X-Page",
+      "X-Total-Pages",
+      "X-Total-Items",
+      "X-Page-Size",
+      "X-Maintenance-Mode"
+    ],
+    "Headers": [
+      "*"
+    ],
+    "Methods": [
+      "*"
+    ],
+    "Origins": [
+      "*"
+    ],
+    "PreflightMaxAge": null,
+    "SupportsCredentials": false
+  },
+  "MetadataConnectionStrings": {
+    "DatabaseProvider": "PostgreSQL",
+    "RdsEndpoint": "no-tenant-kpi-rds",
+    "TenantMetadataDatabase": {
+      "ConnectionString": "Data Source=no-tenant-kpi-rds,1433;Initial Catalog=meta_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;UID='<secret:kpi_TENANT_MASTER_USER>';PWD='<secret:kpi_TENANT_MASTER_PASSWORD>';Connection Timeout=3600;TrustServerCertificate=True;SslMode=Require",
+      "ConnectionString_PostgreSQL": "Username=oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;Password=xobQsMqBi5h2;Host=endpoint-662744937784-vpc-0f30ead302d28c30e-l34emw.endpoint.proxy-cefekb6lills.eu-central-1.rds.amazonaws.com;Port=5432;Database=meta_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;SslMode=Allow;"
+    },
+    "EnvironmentMetadataDatabase": {
+      "ConnectionString": "Data Source=,1433;Initial Catalog=meta_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;UID='<secret:kpi_MASTER_USER>';PWD='<secret:kpi_MASTER_PASSWORD>';Connection Timeout=3600;TrustServerCertificate=True;SslMode=Require",
+      "ConnectionString_PostgreSQL": "Username=oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;Password=xobQsMqBi5h2;Host=endpoint-662744937784-vpc-0f30ead302d28c30e-l34emw.endpoint.proxy-cefekb6lills.eu-central-1.rds.amazonaws.com;Port=5432;Database=meta_oa-pl-euf-kpideveloper-kpi01-dev01-kpidev;SslMode=Allow;"
+    }
+  },
+  "ExternalServices": {
+    "PortalAdminApiUrl": "http://portal-admin-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/api/v1/",
+    "DmDataApiUrl": "http://data.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/api/v1/",
+    "DwhDataApiUrl": "http://datadwh.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/api/v1/",
+    "VirtualDataApiUrl": "http://datavirtual.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/api/v1/",
+    "DataProcessorApiUrl": "http://dataprocessor.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/api/v1/",
+    "PotentialApiUrl": "http://potential-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local:8000/api/v1/",
+    "K8SApiUrl": "http://kubernetes-management-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local:7070/api/internal/v1/",
+    "AuthService": {
+      "BaseUrl": "http://auth",
+      "Timeout": "00:20:00"
+    },
+    "DataServiceRouter": {
+      "BaseUrl": "http://data-service-router.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local",
+      "Timeout": "00:20:00"
+    }
+  },
+  "Swagger": {
+    "Title": "Configuration Service",
+    "CustomRequestHeaders": {}
+  },
+  "RabbitMQ": {
+    "Host": "rabbitmq://rabbitmq",
+    "Password": "npReCXWUy4qkSwYRPTtCMP",
+    "Username": "rabbitmq"
+  },
+  "S3Bucket": {
+    "UseIAMUserAccess": "false",
+    "UseKpiS3FolderPrefix": "false",
+    "KpiS3FolderPrefix": "",
+    "BucketAccessKey": "<secret:kpi_AWS_ACCESS_KEY_ID>",
+    "BucketSecretKey": "<secret:kpi_AWS_ACCESS_KEY_SECRET>",
+    "BucketName": "oa-pl-euf-kpideveloper-kpi01-dev01-kpidev-oa",
+    "RegionName": "eu-central-1"
+  },
+  "SystemConfiguration": {
+    "TranslationExportPath": "translation-export-seed"
+  },
+  "Mongo": {
+    "ConnectionString": "mongodb+srv://dbadmin:4ReiWOdtW6Zvo784XN3kTE1eYhB5aKR9@core-cache-service-svc.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/admin?ssl=false",
+    "MinConnectionPoolSize": 1,
+    "MaxConnectionPoolSize": 1000
+  },
+  "OpenTelemetry": {
+    "Enabled": false,
+    "JaegerHost": "jaeger-agent",
+    "JaegerPort": 6831
+  },
+  "SecretManagerSettings": {
+    "EnableSecretManager": true,
+    "SecretManagerApiUrl": "http://secret-management-service.oa-pl-euf-kpideveloper-kpi01-dev01-kpidev.svc.cluster.local/"
+  }
 }
