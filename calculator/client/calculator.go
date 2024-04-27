@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"io"
 	"log"
 
@@ -39,4 +40,32 @@ func primes(c pb.CalculatorServiceClient) {
 
 		log.Printf("prime: %v", res.Primes)
 	}
+}
+
+func average(c pb.CalculatorServiceClient) {
+	log.Printf("Invoked average...")
+	reqs := []*pb.AverageRequest{
+		{Number: 1},
+		{Number: 2},
+		{Number: 3},
+		{Number: 4},
+		{Number: 5},
+	}
+
+	stream, err := c.Average(context.Background())
+	if err != nil {
+		log.Fatalf("failed to average: %v", err)
+	}
+
+	for _, req := range reqs {
+		if err := stream.Send(req); err != nil {
+			log.Fatalf("failed to send: %v", err)
+		}
+	}
+
+	res, err := stream.CloseAndRecv()
+	if err != nil {
+		log.Fatalf("failed to receive: %v", err)
+	}
+	fmt.Println("average:", res.Result)
 }
